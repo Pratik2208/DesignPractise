@@ -1,98 +1,165 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="DesignPractise.Pages.MainPage"
-             BackgroundColor="Transparent"
-             x:Name="page"
-             Shell.NavBarIsVisible="False"
-            >
+<ContentPage
+    x:Class="DesignPractise.Pages.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Name="page"
+    BackgroundColor="Transparent"
+    Shell.NavBarIsVisible="False">
 
     <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto">
-        <Label 
+        <Label
+            Grid.Row="0"
             Margin="0,20"
-            Grid.Row="0" 
+            FontSize="Title"
+            HorizontalOptions="Center"
             Text="Choose Account Type"
-            TextColor="SkyBlue" 
-            FontSize="Title" 
-            HorizontalOptions="Center" 
+            TextColor="SkyBlue"
             VerticalOptions="Center" />
 
-        <Border 
-            HorizontalOptions="Start"
-            Margin="30,0,0,0"
-            WidthRequest="150"
-            StrokeShape="Rectangle 25" 
+        <Border
             Grid.Row="1"
-            Grid.Column="0">
+            Grid.Column="0"
+            Margin="30,0,0,0"
+            HorizontalOptions="Start"
+            StrokeShape="Rectangle 25"
+            WidthRequest="150">
 
             <Frame>
                 <VerticalStackLayout>
-                    <Image Margin="0,10,0,0" Source="doctor.png" HeightRequest="80">
+                    <Image
+                        Margin="0,10,0,0"
+                        HeightRequest="80"
+                        Source="doctor.png">
                         <Image.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1"/>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1" />
                         </Image.GestureRecognizers>
                     </Image>
-                   <Label 
-                     FontAttributes="Bold"
-                     Text="Doctor" 
-                     HorizontalOptions="Center" 
-                     Margin="0,10" />
+                    <Label
+                        Margin="0,10"
+                        FontAttributes="Bold"
+                        HorizontalOptions="Center"
+                        Text="Doctor" />
                     <Image
-                       IsVisible="false"
-                       x:Name="img2"
-                       HeightRequest="30" 
-                       Source="data:image/png;base64,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" />
-                </VerticalStackLayout>
-            </Frame>
-         </Border>
-
-        <Border 
-             Margin="0,0,30,0"
-             HorizontalOptions="End"
-             WidthRequest="150"
-             StrokeShape="Rectangle 25" 
-             Grid.Row="1"
-             Grid.Column="1">
-            <Frame>
-                <VerticalStackLayout>
-                    <Image Margin="0,10,0,0" Source="profile.png" HeightRequest="80">
-                        <Image.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
-                        </Image.GestureRecognizers>
-                    </Image>
-
-                    <Label 
-                       FontAttributes="Bold"
-                       Text="Patient" 
-                       HorizontalOptions="Center" 
-                       Margin="0,10" />
-                    <Image
-                       IsVisible="false"
-                       x:Name="img"
-                       HeightRequest="30" 
-                       Source=
-                        "data:image/png;base64,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" />
+                        x:Name="img2"
+                        HeightRequest="30"
+                        IsVisible="false"
+                        Source="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJQAAACUCAMAAABC4vDmAAAAq1BMVEX///8GuAoAAAC6uroAtQAAtwAAswAAsQAArwD///33/Pf6/frx+fH2/PX7/v3//f7n9ueQ1JC85rvM68zf89/T7dKa2Jmp3ahlx2SG0IXY79my4rLr9+ye2Z8rvC4guSFUxldLw086vz10zHPG58JDvkNbW1sXFxcODg4yMjIrKytdx15v0HFFx0l+z35s2XKU4Jda1GKu562D2oN53IBubm5CQkLS0tJNTU3uaZu5AAAJZUlEQVR4nO1ba7uauhKGsydhASoXFUGUcO0+XSqr+9J9+v9/2Zno0kIATdB29dmP74e2j9XkZTLzzmQSNO2JJ5544oknnnjiiSee+DfC+WgCHdjWdHKEZZsfzYWbZ7KMt1Gxy/IkSfJqt4+CVbn4QEq2VUZZzggFCmfwf9Gk2scb+6fzQRNt/BAMIIB/sCos6ghR7NOEUIqfUiP11rOfR8jkPu3vwoNBCGG7bblwN1NLc0wTbTfZuMtVnVMkS9P9diI75r2kHG2xTV7gLUmKP9cD39nEXmXsMmoUc7n5ltvt0Fi3gVNYXxID7bD33WG34cu7rBk6GAtlJosYUOaP5rTZUlybQ7CR+LYThwSIEV6PRkcrE0p0nVB3JKuyosRgMf+5eVMvHc2ep/gILLrmNbanIyWEEY+i5PIpqpXSb5YhYDwML82SUf0Eqk7KcbQ4AUIjmYVrwvYZaoTX54BovuDdTLh8RHVkXIpJgRqQjll32yMEkq5nmdriABdObKk+spuhmVbWOEkpc4xDv+NZMQP9Yqf5iGETgGypmWNlbo+P5DU/wEAuLmbSSbJULTRMzceIDWX1uQ+z2CC0bn6yrM4ejpxgxNrFAKTXVRUwRy0Npyd7oL23hOhNOynC0VaUkOA+SohFfmR1xCQyGpz0ESnGx+AZJ2wCqwpZzZwTP71lJ+WCwkc7PYITRnCFfmXPtFgnDU5shJ3WWMapifgQTG4hWmoBaXFS1gI+DqH3+9MZi9yf7BpLh2s3pnhOKRQP3A1s3B1pctLVNdN0AvRN63GctFInd9rJ1JaUsLFlTh98/V47oQ5jTiofR8n2aJMTJOsRm1jTA6hvf02aU031pp1gjJ20uU6TB2w13rHJ2pzUc8sRKYD/sC6Bmz3ATjPNN8iD1AAfbE1Iy8dRM8eMbaXk5WGR5zNyv534ONzLH7R4Pm1z0ktrOmYcMwf2qP7JSuBE524ySmqWySF6FKeWOyGp7fSvZERCNbUvb/t76t8G2pKJG7yVY0b7PzbqruH+nXq3v3Ubjua17QTAx13+8TaiHvrzLR0nbiKiljwhqa3GF2L/9peyJNgp2z1k9SIQ1u7dUQOWKKvCwjDuXz2Tp7s2JzgHzxqochx9gTFb1g7ql/ba0fC8UcMCNLEVXb0irCucik7gdO20nznnQQJiKDrtIoG98JGv3gCMoG0nODTctARQlKqYGG3F5f0No7AUNmgOVmNtTiRvpBZHYzRTI4XVXTvFFHwCmkq3IXCRIiJwamUtBwujXCm+rZBkrR+4J4clINstdbRA0AJCheUPqFKJbm4Y1K2FKo33kUEqjh2tveM82knMwHNDaeNtuka7mYQDnMfmjiWBWIg7bmMheN1TwpFG5yEm3+egqURvMhbWTsdIEwVlkwvLcWtMcbnt9PskkN30z7nIifbYZBpCqlLpeSBuQf28waq6WiWbvD8m2CnsidpZDUwl/ApgwhqtD41nv2GrBRPFoD+3o+7Id6lNLSOJ8JmVNiei2eBopuYmIieuRz36FgBVIZUjKWGUojUT3Q3+epqJQo67zt6suVU5jkFSkIjjnJXqzKoYOC62U5GTPpR3MZfJp9OTpYQ5LUEMh7KpmIR1GCx7Y5U6gZPKOxYPhNleeuXYoyKn4VJAlRR0SS2ZmDfW4ndM3HSKnIphfYwJVamo8k704Yyh6CysI32lKJokvZKUtkAXCrUnl4TOE/pCaYtWsJsx6vQI1NU9NtaergKpPSRWN7hE/RH9xa1ETmRADE7wQOmIr+6kGY6V6DCEtjJkR6Aw8K4c6ppRJ29cRUC7R4KmthEtoZNGFrTrjiG9q3WqtYdMJSGXBumUmE7bVCfZosWFsliRY41zfZJJBqHKydiC9MtL89Tw2Hwm9Ey+NESHOtxoJLmMKBV5k7+TqM9D44upyNspnfA2+4w33DuBR281t9YvB6UelfUl6ak2HG1yqRVg/+7WJ3WcdiKTbm9tfPyXTG0THuh6bwIvz6YihzMNfsfBFoVVp/XN7XQBB7VD/xUMZIDLEdQlP5Nk03Vywm5vLxiplDihi+Bequ9ZO6KNBIpY1PqevNgdiUJx4ysCrL7sd4Qnprc+GBJduhhAtRdbAPQXYHYuLlUXMgc6dgFUtSs3fyHbvs+dbnXSAakkHNhNUDoVe0sWI7v+HDDr1JY9DnUbMR1xgh/x9et9Erfr6y3QlUx3Le27knMLc5TF3sGxvLxqKl5l3caCklCZk2ZlxBjQmllxhRWXLQl4YIw5B1lR2A6sgzscgQTjXGLxXNyajLlhZOlQbQZ+V/ZE4Enipbo7JhZsZNwFjAAwPgaSat0x1SkZcjW4bQBTo1Ky0QM0MR3aH026RegbVhBkQHFFeBR6VVDmp0C7ra53zMWaDjgp6kn12hcJIaNvY7ErOij2WXXGdAgtR4ZUQbvVtjRQdcUW/wUoGcL6oWzKySFaOZ2OPge2Czp8I3Sii6xkagON9zpvl8rXsHghyWALaSUevFRyG6Ya6H3XQlYA2WANKWRmyQ5YjIt310miaYdXrnRZrcwsG3ls1P3JFiYYvQOuMuMXmb4v3l6q6Y8ONVqivqMEoWPQgFPS9/0DoXJ52AoBhhqT8jC5WyWDarXe6cDfvmC1FCe7BlKNvH/cRmSQfCCEHW1WesWu2Mp5iRNRGBpKEfzQdWCo4yPblq1Jvfdk405o5KWpDhzceJD8/mPuWWE8jBNiukevuY8Vv2SPdnrECf4Zs4gONIck4fBqleTj343pA38jgER3XPicP54T34Ni7I+MHFObbl8IVWrbSYJfcmfjlvB4f+DeS/b9MPc4dF4qXuQwtQ13yEr1d7JwfIMQqF21i3pxRokRbn7cC5yTGlnRaCH3jqiDOuAnaCYucj/ypdIyMwhmOrk4mq74e1I0eOSV6H74FX8Pszq+STfkJfycYbpEXyKQ1D+eEsLyMwNdntWr4ens0ttRLHqI92BtGsZsGSYUSxaW1/5i0pJUx56482DH/5vqWfCg+4+ScFfF8T1WSpOwDrYrnyNebaP9gRh82WgelD//pWTb9cOcnd/1PZ6JkPO/kyxY/FwjNbGOgzpNdHoGsKrwtuW45sUDMZts3MWinHMsXPfkYh/+NrnQPvj1Xr1/4oknnnjiiSf+PfjtF4T2n18QF1KfPpKFgHdSX//53z9fP3/99O3Tp99/5vT//fw74vUb/v3t9fPr6+vx0/8DJ1WX0//4f1AAAAAASUVORK5CYII=" />
                 </VerticalStackLayout>
             </Frame>
         </Border>
 
-       
-         <StackLayout Orientation="Vertical" Grid.Row="2">
-            <Border 
-                 StrokeThickness="3"
-                 StrokeShape="RoundRectangle 15" 
-                 Margin="10,40,10,0">
-                    <HorizontalStackLayout Spacing="40">
-                        <Image 
-                           HeightRequest="50"
-                           WidthRequest="50"
-                           Source="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMsAAACUCAMAAAAK/S0jAAAAY1BMVEX///8AAAD7+/sODg64uLh4eHitra2MjIzFxcXJycmBgYGEhIQREREVFRXk5OQICAgfHx/y8vIqKirW1tYaGhrr6+tXV1eTk5MzMzNpaWk4ODihoaFPT09dXV1vb28/Pz9ISEhPQhfqAAAEeElEQVR4nO2abZeyIBCGGTTTFsTXtKzs///KZ8BqN7PHLE7wYa4ve/Z0Im4HmHsGGSMIgiAIgiAIgiAIgiAIgiAIgiAIgiAIgiCID6jjyC5x6khJumurwC5Ze3KhhkcAAdhGAUT820p4VAnZrtZ2WbVSiK+LSaWogr5GURZhdR9Uovr2MtsBPkGV1VYHrZUSUsDO6qDzgMy6VkFb2hoQF1ZZgGq7TIKtMV+jBDiyuFWqTyyNyFmyB7VP2FaBtQf0EjHABhXhr8vY1pAigD2q2ADYej4v/jDAD/5JezyXIysjRiBgr3e9Ky0s3YLIuo+H46zLAtiateVMC0sPIGTz8XiNELAdzmJXWnRW2+Hi+PksvfEfkHC6/OMuLpzxDU5kk38wWI4jqNvjcKcFxeRrFLN7X0yOeRfWt8i61IKTaHCZHd+1APURv90N61XjUIuhy8zW5Wz5vtGHx91J6FoLj9B5HN5J1+UB3dCdM3arRc8kwdJDZ+2FgUHnIEZTdx0XlKCNYRYu1BJihixG4XSuRYs5Q1BEi8RERQDncvQV91rYYM5UuGCQKEAp6XhdeqGF5RgZ9bo563CrHB7Tkh9aWH3C6TX8pROAN9q3TCQlT7SwfIUTnPrgAWPBVrlJtff4ooWx1WvmTFswWE2Gzx8txr0f05lVlqJvEU92lkdauN7S2/+bsxorOBU9cTweadENTROZ5+io6Mp6OnY+acFsXkidAqfQ0y97kMXzPOSXFkyCFbRTEzLOrYAq+E+/wy8t5TaQQhXTM4oL3ZvcPvfUXmlBlxlUewiyqXUUZuinq8FR+r9fYqGgSK/V4ogOAqxAtad+2iP0SEs4eF9d+srxXQqe1xJ2eF4nZ1DFkwLBHy0RViS92Qw6Mqr5O11jwYa+AJ5l02vQIy36wV+9b36xXFeMWbv2W9BTy4k1yLzRwnV36ZTfdrWxwtesmZ7wv984mU5SM5H7PdGyuQ/E0Gw6N2XO87LpdT1w+4SbMKnN1CDOteAT1tXLqHLuKgDI9v0+wwOs6sYVpNBeeRQZD7QYlyXX46yRHAWAUgpAHB/y4zoQ+ljzrkbWtxeiG9eUuJTC9SET2WEd5g97g3dSPthQ9/2xvNfpZDKX8zpN03o6yUf4rf6+dHMel6RQKksWt/pwoEqp+wtc11riPbqs5I1uMn61Bej/+hnHWuIM4IktnifRDc8/Ytxq0Z3U9v2XJdL2zs+4vBdjkZqpiecwR+CtOnMZl26uvJ+n3qENvZozh1rMndinbxbxLdqCi8FxpMWYKqFealTOsEELMFg5V3HJ9YV488kd8pXfC1xHWm69cAsMvfLcgZYE4GTcpLLzNoymC8whsoMvv6fEQbRYtAu55O5ojqgScEgKAV9+SRF1YL4GWy9cDcR4mqGUs9VB50mgksLeW30XylbI6svbhXHcqpXou9AuXS+krcNkAXiIKvvvJwsFaxtH/FIxUWFdCtrt8OtRMfCyWdmlS9woIQiCIAiCIAiCIAiCIAiCIAiCIAiCIAiCIAj/+AcpFD0Er7rhjgAAAABJRU5ErkJggg==" />
-                        <Entry 
-                            Placeholder="Email"/>
-                    </HorizontalStackLayout>
-             </Border>
-         </StackLayout>
-    
+        <Border
+            Grid.Row="1"
+            Grid.Column="1"
+            Margin="0,0,30,0"
+            HorizontalOptions="End"
+            StrokeShape="Rectangle 25"
+            WidthRequest="150">
+            <Frame>
+                <VerticalStackLayout>
+                    <Image
+                        Margin="0,10,0,0"
+                        HeightRequest="80"
+                        Source="profile.png">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                        </Image.GestureRecognizers>
+                    </Image>
+
+                    <Label
+                        Margin="0,10"
+                        FontAttributes="Bold"
+                        HorizontalOptions="Center"
+                        Text="Patient" />
+                    <Image
+                        x:Name="img"
+                        HeightRequest="30"
+                        IsVisible="false"
+                        Source="data:image/png;base64,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" />
+                </VerticalStackLayout>
+            </Frame>
+        </Border>
+
+
+        <StackLayout Grid.Row="2" Orientation="Vertical">
+            <Border
+                x:Name="bemail"
+                Margin="10,40,10,0"
+                StrokeShape="RoundRectangle 15"
+                StrokeThickness="3">
+                <Grid ColumnDefinitions="*,*,*,*,*" RowDefinitions="*">
+                    <Image
+                        Grid.Column="0"
+                        HeightRequest="35"
+                        Source="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMsAAACUCAMAAAAK/S0jAAAAY1BMVEX///8AAAD7+/sODg64uLh4eHitra2MjIzFxcXJycmBgYGEhIQREREVFRXk5OQICAgfHx/y8vIqKirW1tYaGhrr6+tXV1eTk5MzMzNpaWk4ODihoaFPT09dXV1vb28/Pz9ISEhPQhfqAAAEeElEQVR4nO2abZeyIBCGGTTTFsTXtKzs///KZ8BqN7PHLE7wYa4ve/Z0Im4HmHsGGSMIgiAIgiAIgiAIgiAIgiAIgiAIgiAIgiCID6jjyC5x6khJumurwC5Ze3KhhkcAAdhGAUT820p4VAnZrtZ2WbVSiK+LSaWogr5GURZhdR9Uovr2MtsBPkGV1VYHrZUSUsDO6qDzgMy6VkFb2hoQF1ZZgGq7TIKtMV+jBDiyuFWqTyyNyFmyB7VP2FaBtQf0EjHABhXhr8vY1pAigD2q2ADYej4v/jDAD/5JezyXIysjRiBgr3e9Ky0s3YLIuo+H46zLAtiateVMC0sPIGTz8XiNELAdzmJXWnRW2+Hi+PksvfEfkHC6/OMuLpzxDU5kk38wWI4jqNvjcKcFxeRrFLN7X0yOeRfWt8i61IKTaHCZHd+1APURv90N61XjUIuhy8zW5Wz5vtGHx91J6FoLj9B5HN5J1+UB3dCdM3arRc8kwdJDZ+2FgUHnIEZTdx0XlKCNYRYu1BJihixG4XSuRYs5Q1BEi8RERQDncvQV91rYYM5UuGCQKEAp6XhdeqGF5RgZ9bo563CrHB7Tkh9aWH3C6TX8pROAN9q3TCQlT7SwfIUTnPrgAWPBVrlJtff4ooWx1WvmTFswWE2Gzx8txr0f05lVlqJvEU92lkdauN7S2/+bsxorOBU9cTweadENTROZ5+io6Mp6OnY+acFsXkidAqfQ0y97kMXzPOSXFkyCFbRTEzLOrYAq+E+/wy8t5TaQQhXTM4oL3ZvcPvfUXmlBlxlUewiyqXUUZuinq8FR+r9fYqGgSK/V4ogOAqxAtad+2iP0SEs4eF9d+srxXQqe1xJ2eF4nZ1DFkwLBHy0RViS92Qw6Mqr5O11jwYa+AJ5l02vQIy36wV+9b36xXFeMWbv2W9BTy4k1yLzRwnV36ZTfdrWxwtesmZ7wv984mU5SM5H7PdGyuQ/E0Gw6N2XO87LpdT1w+4SbMKnN1CDOteAT1tXLqHLuKgDI9v0+wwOs6sYVpNBeeRQZD7QYlyXX46yRHAWAUgpAHB/y4zoQ+ljzrkbWtxeiG9eUuJTC9SET2WEd5g97g3dSPthQ9/2xvNfpZDKX8zpN03o6yUf4rf6+dHMel6RQKksWt/pwoEqp+wtc11riPbqs5I1uMn61Bej/+hnHWuIM4IktnifRDc8/Ytxq0Z3U9v2XJdL2zs+4vBdjkZqpiecwR+CtOnMZl26uvJ+n3qENvZozh1rMndinbxbxLdqCi8FxpMWYKqFealTOsEELMFg5V3HJ9YV488kd8pXfC1xHWm69cAsMvfLcgZYE4GTcpLLzNoymC8whsoMvv6fEQbRYtAu55O5ojqgScEgKAV9+SRF1YL4GWy9cDcR4mqGUs9VB50mgksLeW30XylbI6svbhXHcqpXou9AuXS+krcNkAXiIKvvvJwsFaxtH/FIxUWFdCtrt8OtRMfCyWdmlS9woIQiCIAiCIAiCIAiCIAiCIAiCIAiCIAiCIAj/+AcpFD0Er7rhjgAAAABJRU5ErkJggg=="
+                        VerticalOptions="Center" />
+                    <Entry
+                        Grid.Column="1"
+                        Grid.ColumnSpan="3"
+                        BackgroundColor="Green"
+                        Focused="Entry_Focused"
+                        HorizontalOptions="Start"
+                        MaximumWidthRequest="150"
+                        Placeholder="Email"
+                        Unfocused="Entry_Unfocused"
+                        VerticalOptions="Center" />
+
+                </Grid>
+            </Border>
+        </StackLayout>
+
+        <StackLayout Grid.Row="3" Orientation="Vertical">
+            <Border
+                x:Name="bpassword"
+                Margin="10,25,10,0"
+                StrokeShape="RoundRectangle 15"
+                StrokeThickness="3">
+                <!--
+                <HorizontalStackLayout>
+                    <Image
+                        HeightRequest="20"
+                        Source="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHYAAAB2CAMAAAAqeZcjAAAAYFBMVEX///8AAAAcHBzr6+vQ0NDLy8uurq45OTn7+/ucnJxWVlbk5OQ8PDynp6fy8vLe3t5HR0d/f3+7u7sSEhJcXFx4eHiKiorY2NiTk5MxMTEJCQlRUVEpKSlkZGTBwcFpaWmMpQ8IAAADEklEQVRoge2bbXezIAyGpxVr68u0tjpnp///X25uOyUiYIBwuuc83F+LuRRCIIG+vJirYmUzDvH7ezyMTckqCxPGyk/HSNDxlPtlZpdRZP5ovGQeobUcuqj2Be7Pauiic+8Bmr3poYveyD84v+5To+hK7Fv9HUONojtpR7MWR42iltFREyx0UUJFfd3arpt0YmxKG8mUeqWhVrFg92OCP08fws8xTbQUfPi28db8tm5xpaCeViblMUGIJCd3ar4yqAoIQjBxn76rkbuo211Wo+9KXc2dSddygi1dZxH0p1TfNKXzqh6YavYaN6CxW5AElob91oPBO+qUgfdHBFsGmrusgcA9UaMFPEHj9LsCfYxaWYDfO/RyVjysFLgnwAP2vXzgL4+MdyCSHqyxwEWQEwJMOPv1nr/7gFzMKj6H7NcD7lHoqMN92d6n+Dp68/jIRvPDRod9pHs8MttSM754oweKu8PZdgYFbMAGbMAGbMA+Bwu2ChZYuzQoL+eR12fuxRGlgheS2nEuTfPc/IYuCenUbisOOk0k0G+wNicWqFTQRWhuvm/LRNh+FgtNjkIWMoxKfRjhChndviEzoTbZmaYyb6caE69A9kQkVN524JXNLnUQH6sYk+oCrFOVp7fGOtXSkoAN2ID9a9iqZ6zXRT0fWDZ/t4pnda2NHlvxylE0q76YHJvzOuqXjopNCzW2WlGjqJB/LzVWOFpTlfmIsb1IVSyQxNjNxyo+lxZbbW57fHmVbHRpsZIzZPlJMS1WuovWN/yHsU/qZDFYLJIGDOIJ1Gyx0tMIYqykl6VXHqiD4yY1k6dW1FgxN1NkVuQLX7Xi1ooF18PuAvSzMnn1gAVHnUqTHrCgqKIsiARswBpgn+TJ4BqIsvjjIxl57OPUZ9I+sIffym+rtugl4/tJSApN9dRTfpuUpf53P9g9BWzABuz/hC0TZq2kNMNWyNvteN0xRxRPOpCRpXRuwl1PIz3PXIQ706TuZVwfk58toqdhuW8LrxJLFW/XO8noliWTFEZsVJheKWVdLf57wlBx3Smhn1kPLT1z87LvAAAAAElFTkSuQmCC"
+                        VerticalOptions="Center"
+                        WidthRequest="50" />
+                    <Entry
+                        HorizontalOptions="Center"
+                        MaximumWidthRequest="90"
+                        Placeholder="Password"
+                        VerticalOptions="Center" />
+                    <Button
+                        Margin="120,0,0,0"
+                        BackgroundColor="Transparent"
+                        Text="Forgot"
+                        TextColor="blue" />
+                </HorizontalStackLayout>
+                -->
+
+                <Grid ColumnDefinitions="*,*,*,*,*" RowDefinitions="*">
+                    <Image
+                        Grid.Column="0"
+                        HeightRequest="20"
+                        Source="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHYAAAB2CAMAAAAqeZcjAAAAYFBMVEX///8AAAAcHBzr6+vQ0NDLy8uurq45OTn7+/ucnJxWVlbk5OQ8PDynp6fy8vLe3t5HR0d/f3+7u7sSEhJcXFx4eHiKiorY2NiTk5MxMTEJCQlRUVEpKSlkZGTBwcFpaWmMpQ8IAAADEklEQVRoge2bbXezIAyGpxVr68u0tjpnp///X25uOyUiYIBwuuc83F+LuRRCIIG+vJirYmUzDvH7ezyMTckqCxPGyk/HSNDxlPtlZpdRZP5ovGQeobUcuqj2Be7Pauiic+8Bmr3poYveyD84v+5To+hK7Fv9HUONojtpR7MWR42iltFREyx0UUJFfd3arpt0YmxKG8mUeqWhVrFg92OCP08fws8xTbQUfPi28db8tm5xpaCeViblMUGIJCd3ar4yqAoIQjBxn76rkbuo211Wo+9KXc2dSddygi1dZxH0p1TfNKXzqh6YavYaN6CxW5AElob91oPBO+qUgfdHBFsGmrusgcA9UaMFPEHj9LsCfYxaWYDfO/RyVjysFLgnwAP2vXzgL4+MdyCSHqyxwEWQEwJMOPv1nr/7gFzMKj6H7NcD7lHoqMN92d6n+Dp68/jIRvPDRod9pHs8MttSM754oweKu8PZdgYFbMAGbMAGbMA+Bwu2ChZYuzQoL+eR12fuxRGlgheS2nEuTfPc/IYuCenUbisOOk0k0G+wNicWqFTQRWhuvm/LRNh+FgtNjkIWMoxKfRjhChndviEzoTbZmaYyb6caE69A9kQkVN524JXNLnUQH6sYk+oCrFOVp7fGOtXSkoAN2ID9a9iqZ6zXRT0fWDZ/t4pnda2NHlvxylE0q76YHJvzOuqXjopNCzW2WlGjqJB/LzVWOFpTlfmIsb1IVSyQxNjNxyo+lxZbbW57fHmVbHRpsZIzZPlJMS1WuovWN/yHsU/qZDFYLJIGDOIJ1Gyx0tMIYqykl6VXHqiD4yY1k6dW1FgxN1NkVuQLX7Xi1ooF18PuAvSzMnn1gAVHnUqTHrCgqKIsiARswBpgn+TJ4BqIsvjjIxl57OPUZ9I+sIffym+rtugl4/tJSApN9dRTfpuUpf53P9g9BWzABuz/hC0TZq2kNMNWyNvteN0xRxRPOpCRpXRuwl1PIz3PXIQ706TuZVwfk58toqdhuW8LrxJLFW/XO8noliWTFEZsVJheKWVdLf57wlBx3Smhn1kPLT1z87LvAAAAAElFTkSuQmCC"
+                        VerticalOptions="Center" />
+                    <Entry
+                        Grid.Column="1"
+                        Grid.ColumnSpan="3"
+                        BackgroundColor="Green"
+                        Focused="Entry_Focused_1"
+                        HorizontalOptions="Start"
+                        MaximumWidthRequest="150"
+                        Placeholder="Password"
+                        Unfocused="Entry_Unfocused_1"
+                        VerticalOptions="Center" />
+                    <Button
+                        Grid.Column="4"
+                        BackgroundColor="Transparent"
+                        Text="Forgot"
+                        TextColor="blue" />
+                </Grid>
+            </Border>
+        </StackLayout>
+
 
     </Grid>
 
