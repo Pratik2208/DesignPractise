@@ -1,6 +1,4 @@
-﻿using CommunityToolkit.Mvvm.Input;
-
-namespace DesignPractise.Pages
+﻿namespace DesignPractise.Pages
 {
     public partial class MainPage : ContentPage
     {

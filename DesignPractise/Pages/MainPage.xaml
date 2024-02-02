@@ -76,6 +76,24 @@
             </Frame>
         </Border>
 
+       
+         <StackLayout Orientation="Vertical" Grid.Row="2">
+            <Border 
+                 StrokeThickness="3"
+                 StrokeShape="RoundRectangle 15" 
+                 Margin="10,40,10,0">
+                    <HorizontalStackLayout Spacing="40">
+                        <Image 
+                           HeightRequest="50"
+                           WidthRequest="50"
+                           Source="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMsAAACUCAMAAAAK/S0jAAAAY1BMVEX///8AAAD7+/sODg64uLh4eHitra2MjIzFxcXJycmBgYGEhIQREREVFRXk5OQICAgfHx/y8vIqKirW1tYaGhrr6+tXV1eTk5MzMzNpaWk4ODihoaFPT09dXV1vb28/Pz9ISEhPQhfqAAAEeElEQVR4nO2abZeyIBCGGTTTFsTXtKzs///KZ8BqN7PHLE7wYa4ve/Z0Im4HmHsGGSMIgiAIgiAIgiAIgiAIgiAIgiAIgiAIgiCID6jjyC5x6khJumurwC5Ze3KhhkcAAdhGAUT820p4VAnZrtZ2WbVSiK+LSaWogr5GURZhdR9Uovr2MtsBPkGV1VYHrZUSUsDO6qDzgMy6VkFb2hoQF1ZZgGq7TIKtMV+jBDiyuFWqTyyNyFmyB7VP2FaBtQf0EjHABhXhr8vY1pAigD2q2ADYej4v/jDAD/5JezyXIysjRiBgr3e9Ky0s3YLIuo+H46zLAtiateVMC0sPIGTz8XiNELAdzmJXWnRW2+Hi+PksvfEfkHC6/OMuLpzxDU5kk38wWI4jqNvjcKcFxeRrFLN7X0yOeRfWt8i61IKTaHCZHd+1APURv90N61XjUIuhy8zW5Wz5vtGHx91J6FoLj9B5HN5J1+UB3dCdM3arRc8kwdJDZ+2FgUHnIEZTdx0XlKCNYRYu1BJihixG4XSuRYs5Q1BEi8RERQDncvQV91rYYM5UuGCQKEAp6XhdeqGF5RgZ9bo563CrHB7Tkh9aWH3C6TX8pROAN9q3TCQlT7SwfIUTnPrgAWPBVrlJtff4ooWx1WvmTFswWE2Gzx8txr0f05lVlqJvEU92lkdauN7S2/+bsxorOBU9cTweadENTROZ5+io6Mp6OnY+acFsXkidAqfQ0y97kMXzPOSXFkyCFbRTEzLOrYAq+E+/wy8t5TaQQhXTM4oL3ZvcPvfUXmlBlxlUewiyqXUUZuinq8FR+r9fYqGgSK/V4ogOAqxAtad+2iP0SEs4eF9d+srxXQqe1xJ2eF4nZ1DFkwLBHy0RViS92Qw6Mqr5O11jwYa+AJ5l02vQIy36wV+9b36xXFeMWbv2W9BTy4k1yLzRwnV36ZTfdrWxwtesmZ7wv984mU5SM5H7PdGyuQ/E0Gw6N2XO87LpdT1w+4SbMKnN1CDOteAT1tXLqHLuKgDI9v0+wwOs6sYVpNBeeRQZD7QYlyXX46yRHAWAUgpAHB/y4zoQ+ljzrkbWtxeiG9eUuJTC9SET2WEd5g97g3dSPthQ9/2xvNfpZDKX8zpN03o6yUf4rf6+dHMel6RQKksWt/pwoEqp+wtc11riPbqs5I1uMn61Bej/+hnHWuIM4IktnifRDc8/Ytxq0Z3U9v2XJdL2zs+4vBdjkZqpiecwR+CtOnMZl26uvJ+n3qENvZozh1rMndinbxbxLdqCi8FxpMWYKqFealTOsEELMFg5V3HJ9YV488kd8pXfC1xHWm69cAsMvfLcgZYE4GTcpLLzNoymC8whsoMvv6fEQbRYtAu55O5ojqgScEgKAV9+SRF1YL4GWy9cDcR4mqGUs9VB50mgksLeW30XylbI6svbhXHcqpXou9AuXS+krcNkAXiIKvvvJwsFaxtH/FIxUWFdCtrt8OtRMfCyWdmlS9woIQiCIAiCIAiCIAiCIAiCIAiCIAiCIAiCIAj/+AcpFD0Er7rhjgAAAABJRU5ErkJggg==" />
+                        <Entry 
+                            Placeholder="Email"/>
+                    </HorizontalStackLayout>
+             </Border>
+         </StackLayout>
+    
+
     </Grid>
 
 </ContentPage>

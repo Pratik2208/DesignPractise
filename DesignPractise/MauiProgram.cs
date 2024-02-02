@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using CommunityToolkit.Maui;
 using DesignPractise.Pages;
+using Microsoft.Maui.Controls.Compatibility.Platform.Android;
 
 namespace DesignPractise
 {
@@ -8,6 +9,11 @@ namespace DesignPractise
     {
         public static MauiApp CreateMauiApp()
         {
+            Microsoft.Maui.Handlers.EntryHandler.Mapper.AppendToMapping("NoUnderline", (h, v) =>
+            {
+                h.PlatformView.BackgroundTintList =
+                    Android.Content.Res.ColorStateList.ValueOf(Colors.Transparent.ToAndroid());
+            });
             var builder = MauiApp.CreateBuilder();
             builder.UseMauiApp<App>().ConfigureFonts(fonts =>
             {
