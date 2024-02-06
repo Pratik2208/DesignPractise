@@ -2,6 +2,8 @@
 using CommunityToolkit.Maui;
 using DesignPractise.Pages;
 using Microsoft.Maui.Controls.Compatibility.Platform.Android;
+using DesignPractise.ViewModel;
+using DesignPractise.Services;
 
 namespace DesignPractise
 {
@@ -20,9 +22,12 @@ namespace DesignPractise
                 fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                 fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
             }).UseMauiCommunityToolkit();
+            builder.Services.AddSingleton<MainPage>();
+            builder.Services.AddSingleton<UserViewModel>();
+            builder.Services.AddSingleton<AuthService>();
 #if DEBUG
             builder.Logging.AddDebug();
-            builder.Services.AddTransient<MainPage>();
+            
             
 #endif
             return builder.Build();

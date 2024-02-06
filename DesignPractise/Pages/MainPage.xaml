@@ -3,7 +3,9 @@
     x:Class="DesignPractise.Pages.MainPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Name="page"
+    xmlns:model="clr-namespace:DesignPractise.Models"
+    xmlns:viewmodel="clr-namespace:DesignPractise.ViewModel"
+    x:DataType="viewmodel:UserViewModel"
     BackgroundColor="Transparent"
     Shell.NavBarIsVisible="False">
 
@@ -13,7 +15,7 @@
             Margin="0,20"
             FontSize="Title"
             HorizontalOptions="Center"
-            Text="Choose Account Type"
+            Text="{Binding Username}"
             TextColor="SkyBlue"
             VerticalOptions="Center" />
 
@@ -158,6 +160,7 @@
                         TextColor="blue" />
                 </Grid>
             </Border>
+            <Button Command="{Binding LoginCommand}" Text="login" />
         </StackLayout>
 
 
